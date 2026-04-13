@@ -1,0 +1,57 @@
+server:
+  port: 8584
+  error:
+    include-message: always
+
+spring:
+  application:
+    name: padel-service
+  boot:
+    admin:
+      client:
+        url: http://localhost:9090
+        instance:
+          management-base-url: http://localhost:8584
+          metadata:
+            user.name: a
+            user.password: 1234
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/wigell_padel_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Europe/Stockholm
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: Europe/Stockholm
+    show-sql: false
+  main:
+    banner-mode: off
+    log-startup-info: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+info:
+  app:
+    name: padel-service
+    version: 1.0.0
+
+logging:
+  level:
+    root: ERROR
+    com.simon.wigellpadel: INFO
+
+app:
+  exchange:
+    sek-to-eur: 0.1
+    eur-to-sek: 10.0
