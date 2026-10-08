@@ -115,7 +115,7 @@ public class DataInitializer implements CommandLineRunner {
     private Customer createCustomer(String username, String role, String firstName, String lastName) {
         Customer c = new Customer();
         c.setUsername(username);
-        c.setPassword(passwordEncoder.encode("password123"));
+        c.setPassword(passwordEncoder.encode("1234"));
         c.setRole(role);
         c.setFirstName(firstName);
         c.setLastName(lastName);

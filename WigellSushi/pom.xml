@@ -60,7 +60,7 @@
 		</dependency>
 		<dependency>
 			<groupId>de.codecentric</groupId>
-			<artifactId>spring-boot-admin-starter-server</artifactId>
+			<artifactId>spring-boot-admin-starter-client</artifactId>
 			<version>3.4.5</version>
 		</dependency>
 	</dependencies>
